@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.cloud.sirius.demo.mapper.DemoMapper">
+  <resultMap id="BaseResultMap" type="com.cloud.sirius.demo.entity.Demo">
+    <!--
+      WARNING - @mbg.generated
+    -->
+    <id column="id" jdbcType="BIGINT" property="id" />
+    <result column="dic_key" jdbcType="VARCHAR" property="dicKey" />
+    <result column="dic_value" jdbcType="VARCHAR" property="dicValue" />
+    <result column="create_time" jdbcType="TIMESTAMP" property="createTime" />
+    <result column="update_time" jdbcType="TIMESTAMP" property="updateTime" />
+  </resultMap>
+
+    <select id="queryDemo" resultMap="BaseResultMap" parameterType="java.lang.String">
+      select * from demo where  dic_key = #{dicKey};
+    </select>
+</mapper>
